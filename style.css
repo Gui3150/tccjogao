@@ -1,0 +1,182 @@
+:root {
+    --bg: #f5f5f5;
+    --text: #111;
+    --card: white;
+    --success: #22c55e;
+    --partial: #eab308;
+    --fail: #9ca3af;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  body.dark {
+    --bg: #111827;
+    --text: #f9fafb;
+    --card: #1f2937;
+    --shadow: rgba(255, 255, 255, 0.05);
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+  
+  .menu-icon span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: var(--text);
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: var(--card);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: left 0.4s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar.show {
+    left: 0;
+  }
+  
+  .sidebar.show #closeSidebar {
+    display: block;
+  }
+  
+  #closeSidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--text);
+    cursor: pointer;
+    display: none;
+  }
+  
+  .input-section {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    font-size: 18px;
+    width: 60%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 2px 6px var(--shadow);
+    transition: transform 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  .btn-verde {
+    background-color: #22c55e;
+    color: white;
+  }
+  
+  .btn-vermelho {
+    margin-top: 20px;
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  #tentativas {
+    margin-top: 20px;
+  }
+  
+  .linha {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .letra {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 6px;
+    color: white;
+    animation: flipIn 0.4s ease;
+  }
+  
+  @keyframes flipIn {
+    0% { transform: rotateX(90deg); opacity: 0; }
+    100% { transform: rotateX(0deg); opacity: 1; }
+  }
+  
+  .correto {
+    background-color: var(--success);
+  }
+  
+  .parcial {
+    background-color: var(--partial);
+  }
+  
+  .errado {
+    background-color: var(--fail);
+  }
+  
+  #mensagem {
+    font-weight: bold;
+    color: #d97706;
+    margin-top: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
